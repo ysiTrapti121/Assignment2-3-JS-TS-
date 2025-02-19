@@ -23,7 +23,7 @@ const Taskdata = [
         Task_Description :"Documentation",
         Assigned_To  : "Jane smith ",
         Due_Date :   "2025-02-20"
-    }
+    },
     {
         Task_ID : 5,
         Task_Description :"Monitoring",
