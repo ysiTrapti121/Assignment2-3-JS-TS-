@@ -1,16 +1,15 @@
-const taskBody = document.getElementById('TableData');
-taskBody.innerHTML= "";
+const taskData = document.getElementById('TableData');
+taskData.innerHTML= "";
 Taskdata.forEach(task =>
     {
         const row= document.createElement('tr');
-
-        const tableDID = document.createElement('td');
-        const tableLink= document.createElement('a');
-        tableLink.href =  `trdetails.html?Task_ID= ${task.Task_ID}`;
-        tableLink.textContent = task.Task_ID;
-
-        tableDID.appendChild(tableLink);
-        row.appendChild(tableDID);
+        // const tableDID = document.createElement('td');
+        // const tableLink= document.createElement('a');
+        // tableLink.href =`tr_details.html?Task_ID=${task.Task_ID}`;
+        // tableLink.textContent = task.Task_ID;
+        // tableDID.appendChild(tableLink);
+        // row.appendChild(tableDID);
+        row.innerHTML= <td><a href="tr_details.html?taskID=${task.Task_ID}"></a> </td>
 
         const tableDescD= document.createElement('td');
         tableDescD.textContent = task.Task_Description;
@@ -24,6 +23,6 @@ Taskdata.forEach(task =>
         tableDueD.textContent = task.Due_Date;
         row.appendChild(tableDueD);
 
-        taskBody.appendChild(row);
+        taskData.appendChild(row);
     }
 )
