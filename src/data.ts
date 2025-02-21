@@ -56,5 +56,5 @@ const Taskdata : Task[] = [
         Due_Date :   "2025-02-20"
     }
     
-]
+];
 export { Task, Taskdata };

@@ -1,7 +1,7 @@
-import {Taskdata} from './data';
-document.addEventListener('DOMContentLoaded', ()=>{
-    const taskData = document.getElementById('TableData') as HTMLTableSectionElement;
-    taskData.innerHTML= "";
+import {Taskdata} from './data.js';
+
+    const taskBody = document.getElementById('TableData') as HTMLTableSectionElement;
+    taskBody.innerHTML= "";
     Taskdata.forEach(task =>
         {
             const row= document.createElement('tr');
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             tableDueD.textContent = task.Due_Date;
             row.appendChild(tableDueD);
     
-            taskData.appendChild(row);
+            taskBody.appendChild(row);
         }
-    )
-    });
+    );

@@ -1,13 +1,17 @@
-import { Task, Taskdata } from "./data";
+import { Taskdata } from "./data.js";
+document.addEventListener('DOMContentLoaded', ()=> {
 const usp = new URLSearchParams(window.location.search);
 console.log(usp.toString());
 const taskid= usp.get('Task_ID');
 console.log(taskid);
-
-const task= Taskdata.find(t=>t.Task_ID.toString() == taskid);
+if(!taskid){
+  return;
+}
+const taskIdNumber = parseInt(taskid, 10);
+const task= Taskdata.find(t=>t.Task_ID === taskIdNumber);
 if (task){
   console.log(task);
-  const tID = document.getElementById('taskID') as HTMLInputElement;
+  const tID = document.getElementById('taskId') as HTMLInputElement;
   const tDescription= document.getElementById('desc') as HTMLInputElement;
   const tAssigned =  document.getElementById('assignedTo') as HTMLInputElement;
   const tdueDate = document.getElementById('dueDate') as HTMLInputElement;
@@ -22,13 +26,9 @@ if(tID && tDescription && tAssigned && tdueDate){
 else {
     console.log("Error finding values");
 }
-//   document.getElementById('taskId').value= task.Task_ID;
-//   document.getElementById('desc').value= task.Task_Description;
-//   document.getElementById('assignedTo').value= task.Assigned_To;
-//   document.getElementById('dueDate').value= task.Due_Date;
-
 }
 else {
   console.log("NA");
     alert('Task not found');
 }
+});
